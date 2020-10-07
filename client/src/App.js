@@ -3,10 +3,17 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Axios from "axios";
 import "./App.css";
 
+// Screens/Pages
 import Home from "./components/pages/Home";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import ShirtHome from './components/pages/ShirtHome';
+import TEST from './components/pages/TEST';
+
+// Nav
 import Header from "./components/layout/Header";
+
+// State Management
 import UserContext from "./context/UserContext";
 
 function App() {
@@ -53,6 +60,8 @@ function App() {
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/test" component={TEST} />
+            <Route path="/shirts" component={ShirtHome} />
             <div className="container">
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />

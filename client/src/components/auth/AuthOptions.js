@@ -11,6 +11,7 @@ export default function AuthOptions() {
   // Here we are pushing two routes in the history variable from above
   const register = () => history.push("/register");
   const login = () => history.push("/login");
+  const shirts = () => history.push('/shirts')
 
   // Upon logout we are setting the token and user to undefined and then setting localStorage back to an empty string
   const logout = () => {
@@ -26,7 +27,7 @@ export default function AuthOptions() {
       {userData.user ? (
         <>
           {/* This is our navigation */}
-          <button>Shirts</button>
+          <button onClick={shirts}>Shirts</button>
           <button onClick={logout}>Log out</button>
         </>
       ) : (
