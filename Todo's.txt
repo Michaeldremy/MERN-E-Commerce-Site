@@ -1,0 +1,8 @@
+Product Model
+Size
+- How to setup model to have indiviual parts
+- Size Example would be a button that has SM, MD, LG
+
+Colors
+- Color text changes and you can select a color blob
+

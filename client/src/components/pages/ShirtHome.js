@@ -1,6 +1,7 @@
 import React from 'react'
 
 import useHidePageInformation from '../../hooks/useHidePageInformation';
+import ProductDisplay from '../products/ProductDisplay';
 
 export default function ShirtHome() {
 
@@ -8,7 +9,7 @@ export default function ShirtHome() {
 
   return (
     <div>
-      <h1>Welcome to the shirt screen</h1>
+      <ProductDisplay />
     </div>
   )
 }

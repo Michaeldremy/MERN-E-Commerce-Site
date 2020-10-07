@@ -6,6 +6,22 @@
 #product-display-container {
   max-width: 65%;
   margin: 0 auto;
+  display: flex;
+}
+
+#product-card-container {
+  margin-top: 50px;
+  display: flex;
+}
+
+#product-card-container h1{
+  padding-left: 32px;
+  font-size: 20px;
+}
+
+#product-card-container p{
+  padding-left: 32px;
+  font-size: 18px;
 }
 
 /* ProductModal.js */
