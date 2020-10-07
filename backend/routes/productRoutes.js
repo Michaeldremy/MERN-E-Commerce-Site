@@ -1,4 +1,4 @@
-const router = require('express').Router()
+const router = require("express").Router();
 const Product = require("../models/productModel");
 
 // create product route
@@ -14,6 +14,7 @@ router.post("/create", async (req, res) => {
       category,
       stock,
       quantity,
+      amount,
       createdAt,
     } = req.body;
 
@@ -50,6 +51,7 @@ router.post("/create", async (req, res) => {
       category: category,
       stock: stock,
       quantity: quantity,
+      amount: amount,
       createdAt: createdAt,
     });
 
@@ -80,6 +82,28 @@ router.get("/product/:id", async (req, res) => {
   }
 });
 
+// update product
+router.put("/product/:id", async (req, res) => {
+  try {
+    const updateProduct = await Product.findByIdAndUpdate(
+      { _id: req.params.id },
+      req.body,
+      { new: true }
+    );
+    res.json(updateProduct);
+  } catch (error) {
+    res.status(500).json({ err: error.message });
+  }
+});
 
+// delete product
+router.delete("/product/:id", async (req, res) => {
+  try {
+    const deleteProduct = await Product.deleteOne({ _id: req.params.id });
+    res.json(deleteProduct);
+  } catch (error) {
+    res.status(500).json({ err: error.message });
+  }
+});
 
 module.exports = router;

@@ -11,6 +11,7 @@ const productSchema = new mongoose.Schema([
     category: { type: String },
     stock: { type: Boolean },
     quantity: { type: Number },
+    amount: {type: Number},
     createdAt: { type: Date, default: Date.now }
   },
 ]);
