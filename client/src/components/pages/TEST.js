@@ -1,9 +1,14 @@
-import React from 'react'
+import Axios from 'axios'
+import React, { useState, useEffect } from 'react'
+import ProductDisplay from '../products/ProductDisplay'
+import ViewOneProduct from './ViewOneProduct'
 
 export default function TEST() {
+
   return (
     <div>
-      <h1>Enter a test object</h1>
+      <ViewOneProduct />
+      {/* <ProductDisplay /> */}
     </div>
   )
 }

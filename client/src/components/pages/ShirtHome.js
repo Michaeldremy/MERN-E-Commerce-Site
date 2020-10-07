@@ -5,7 +5,7 @@ import ProductDisplay from '../products/ProductDisplay';
 
 export default function ShirtHome() {
 
-  useHidePageInformation();
+  // useHidePageInformation();
 
   return (
     <div>
