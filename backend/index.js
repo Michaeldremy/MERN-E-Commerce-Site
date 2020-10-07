@@ -31,3 +31,6 @@ mongoose.connect(
 
 // user routes
 app.use("/users", require('./routes/userRouter'));
+
+// product routes
+app.use("/products", require('./routes/productRoutes'));
