@@ -7,7 +7,7 @@ export default function TEST() {
 
   return (
     <div>
-      <ViewOneProduct />
+      {/* <ViewOneProduct /> */}
       {/* <ProductDisplay /> */}
     </div>
   )

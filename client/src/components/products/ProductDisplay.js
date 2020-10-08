@@ -31,17 +31,11 @@ export default function ProductDisplay() {
                       marginLeft: "2rem",
                     }}
                   />
-                  <Link to={`/products/product/${item._id}`}><h1 style={{ margin: "0" }}>{item.title}</h1></Link>
+                  <Link to={`/products/product/${item._id}`} style={{color: "black"}}><h1 style={{ margin: "0" }}>{item.title}</h1></Link>
                   <br />
                   <p style={{margin: "0" }}>${item.price}</p>
                   <br/>
                   {/* Here are are mapping through our size array but first we had to go to the product aka item */}
-                  {item.size ?
-                  item.size.map((size, i) => {
-                    return (
-                    <div key={i}><button>{size}</button></div>
-                    )
-                  }) : "No Sizes"}
                 </div>
               );
             })
