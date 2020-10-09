@@ -7,6 +7,8 @@
   
 }
 
+/* img */
+
 .single-product-contianer img{
   height: 550px;
 }
@@ -20,15 +22,31 @@
 .interactive-container .sizes{
   padding: 10px;
   background-color: rgba(247, 247, 247, 0.829);
-  margin: 0 5px;
+  margin: .25rem 5px;
   color: rgb(250, 139, 12);
   border-radius: 5px;
   font-weight: bold;
   border: 1px solid black;
 }
 
-.interactive-container .colors{
-  color: dodgerblue;
-  margin: 0 5px;
-  text-transform: uppercase;
+/* product info */
+
+.product-info-container{
+  margin-top: 5rem;
+}
+
+.product-info-container h4{
+  font-weight: 200;
+  font-family: sans-serif;
+}
+
+/* quanitity and add to cart */
+
+.amount-calulator{
+  margin-top: 3rem;
+  display: flex;
+}
+
+.amount-calulator button{
+  margin: 0 20px;
 }

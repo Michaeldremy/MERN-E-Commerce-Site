@@ -5,7 +5,7 @@ import "./App.css";
 
 // Screens/Pages
 import Home from "./components/pages/Home";
-import Login from "./components/auth/Login";
+import Login from './components/auth/Login';
 import Register from "./components/auth/Register";
 import ShirtHome from './components/pages/ShirtHome';
 import ViewOneProduct from './components/pages/ViewOneProduct';
@@ -66,8 +66,8 @@ function App() {
             <Route path="/shirts" component={ShirtHome} />
             <Route path="/products/product/:id" render={props => <ViewOneProduct {...props} />}/>
             <div className="container">
-              {/* <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} /> */}
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
             </div>
           </Switch>
         </UserContext.Provider>

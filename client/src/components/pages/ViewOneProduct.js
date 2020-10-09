@@ -4,6 +4,9 @@ import axios from "axios";
 import "../products/styles/SingleProductPage.css";
 
 import useHidePageInformation from "../../hooks/useHidePageInformation";
+import AddToCartButton from "../misc/AddToCartButton";
+import QuantityDropdownButton from "../misc/QuantityDropdownButton";
+import ColorSelectorButton from "../misc/ColorSelectorButton";
 
 export default function ViewOneProduct(props) {
   // useHidePageInformation();
@@ -28,21 +31,33 @@ export default function ViewOneProduct(props) {
         <h3>${product.price}</h3>
         {product.colors ? (
           product.colors.map((item, i) => {
-            return <button className="colors" key={i}>{item}</button>;
+            return (
+              <ColorSelectorButton key={i} scopeColor={item} title={item} />
+            );
           })
         ) : (
           <p>No Colors Available</p>
         )}
-        <br/>
-        <br/>
-        <br/>
+        <br />
         {product.size ? (
           product.size.map((item, i) => {
-            return <button className="sizes" key={i}>{item}</button>;
+            return (
+              <button className="sizes" key={i}>
+                {item}
+              </button>
+            );
           })
         ) : (
           <p>No Sizes Available</p>
         )}
+        <div className="product-info-container">
+          <h3>Product Information</h3>
+          <h4>{product.description}</h4>
+        </div>
+        <div className="amount-calulator">
+          <QuantityDropdownButton />
+          <AddToCartButton title="Add to Cart" />
+        </div>
       </div>
     </div>
   );
