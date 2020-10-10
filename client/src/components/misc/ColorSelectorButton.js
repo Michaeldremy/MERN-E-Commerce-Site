@@ -5,9 +5,11 @@ export default function ColorSelectorButton({scopeColor, title}) {
   const styles = {
     height: '30px',
     width: '85px',
+    fontSize: '1px',
     color: scopeColor,
-    display: 'flex',
-    margin: '10px 0px',
+    textAlign: 'center',
+    display: 'inline-block',
+    margin: '25px 5px',
     padding: '5px 15px',
     fontWeight: 'bold',
     borderRadius: '5px',
@@ -17,8 +19,8 @@ export default function ColorSelectorButton({scopeColor, title}) {
   }
 
   return (
-    <div>
+    <>
       <button style={styles}>{title}</button>
-    </div>
+    </>
   )
 }

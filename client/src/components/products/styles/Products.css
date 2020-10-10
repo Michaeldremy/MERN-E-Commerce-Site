@@ -1,25 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+* {
+  box-sizing: border-box;
+}
 
 /* ProductDisplay.js */
 
-#product-display-container {
-  max-width: 65%;
+.product-display-container {
   margin: 0 auto;
-  display: flex;
+  padding: 0 1rem;
+  display: inline-flex;
+  flex-direction: row;
 }
 
-#product-card-container {
+.product-card-container {
   margin-top: 50px;
   display: flex;
 }
 
-#product-card-container h1{
+.product-card-container h1{
   padding-left: 32px;
   font-size: 20px;
 }
 
-#product-card-container p{
+.product-card-container p{
   padding-left: 32px;
   font-size: 18px;
 }

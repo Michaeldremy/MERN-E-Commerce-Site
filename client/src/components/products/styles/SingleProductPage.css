@@ -1,29 +1,33 @@
 /* main container */
 
 .single-product-contianer{
-  max-width: 65%;
-  margin: 50px auto 0;
+  max-width: 75%;
+  margin: 30px auto;
   display: flex;
-  
 }
 
 /* img */
 
 .single-product-contianer img{
+  padding: 0 1.5rem;
+  max-width: 500px;
   height: 550px;
+  margin: 1rem auto;
 }
 
 /* interactive container */
 
 .interactive-container{
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 .interactive-container .sizes{
-  padding: 10px;
-  background-color: rgba(247, 247, 247, 0.829);
-  margin: .25rem 5px;
-  color: rgb(250, 139, 12);
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.829);
+  margin: 2rem 5px;
+  color: rgb(27, 106, 253);
   border-radius: 5px;
   font-weight: bold;
   border: 1px solid black;
@@ -32,7 +36,7 @@
 /* product info */
 
 .product-info-container{
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .product-info-container h4{
@@ -43,10 +47,75 @@
 /* quanitity and add to cart */
 
 .amount-calulator{
-  margin-top: 3rem;
+  margin: 5rem 0;
   display: flex;
 }
 
 .amount-calulator button{
   margin: 0 20px;
+}
+
+/* related items */
+
+.related-products-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.related-products-container h1 {
+  margin: 1rem 1rem;
+}
+
+.recommended-container{
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.recommended-container img{
+  height: 300px;
+}
+
+/* media query */
+
+@media screen and (max-width: 1000px) {
+  .single-product-contianer{
+    display: block;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .single-product-contianer img {
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .amount-calulator {
+    justify-content: center;
+  }
+
+  .related-products-container h1 {
+    font-size: 30px;
+    text-align: center;
+  }
+  .recommended-container {
+    margin: 0 auto;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .recommended-container {
+    margin: 0 0;
+    padding: 0 1rem;
+    display: block;
+    text-align: center;
+  }
+
+  .related-products-container h1 {
+    font-size: 25px;
+    text-align: center;
+  }
 }

@@ -66,8 +66,8 @@ function App() {
             <Route path="/shirts" component={ShirtHome} />
             <Route path="/products/product/:id" render={props => <ViewOneProduct {...props} />}/>
             <div className="container">
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
+              {/* <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} /> */}
             </div>
           </Switch>
         </UserContext.Provider>
