@@ -16,6 +16,7 @@ import Header from "./components/layout/Header";
 
 // State Management
 import UserContext from "./context/UserContext";
+import CreateProduct from "./components/products/CreateProduct";
 
 function App() {
 
@@ -66,6 +67,7 @@ function App() {
             <Route path="/shirts" component={ShirtHome} />
             <Route path="/products/product/:id" render={props => <ViewOneProduct {...props} />}/>
             <div className="container">
+              <Route path="/create-product" component={CreateProduct} />
               {/* <Route path="/login" component={Login} />
               <Route path="/register" component={Register} /> */}
             </div>
