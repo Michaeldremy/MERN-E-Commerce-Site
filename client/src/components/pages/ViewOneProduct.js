@@ -87,7 +87,7 @@ export default function ViewOneProduct(props) {
                 </>
               );
             } else {
-              return <h1>Currently there is no related products</h1>
+              return ""
             }
           })}
         </div>

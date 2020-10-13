@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import Axios from "axios";
 
 import AddToCartButton from "../misc/AddToCartButton";
 import AppInputField from "../misc/AppInputField";
@@ -10,13 +10,12 @@ export default function CreateProduct() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(Number);
   const [colors, setColors] = useState([]);
-  const [sizes, setSizes] = useState([]);
+  const [size, setSize] = useState([]);
   const [imgUrl, setImgUrl] = useState("");
   const [category, setCategory] = useState("");
-  const [stock, setStock] = useState(false);
+  const [stock, setStock] = useState(true);
   const [quantity, setQuantity] = useState(Number);
   const [amount, setAmount] = useState(Number);
-  const [error, setError] = useState();
 
   const toggleCheckbox = () => {
     setStock(!stock);
@@ -24,33 +23,27 @@ export default function CreateProduct() {
   };
 
   const onSubmitHandler = (e) => {
-    try {
       e.preventDefault();
-      axios
+      Axios
         .post("http://localhost:5000/products/create", {
           title,
           description,
           price,
           colors,
-          sizes,
+          size,
           imgUrl,
           category,
           stock,
           quantity,
           amount,
         })
-        .then((res) => console.log(res));
-    } catch (err) {
-      err.response.data.msg && setError(err.response.data.msg);
-    }
+        .then(res => console.log(res))
+        .catch(err => console.log(err.response))
   };
 
   return (
     <div>
       <h1>Create Product</h1>
-      {error && (
-        <ErrorNotice message={error} clearError={() => setError(undefined)} />
-      )}
       <form className="form" onSubmit={onSubmitHandler}>
         <AppInputField
           type="text"
@@ -75,7 +68,7 @@ export default function CreateProduct() {
         <AppInputField
           type="text"
           placeholder="Size, seperate by a comma"
-          onChange={(e) => setSizes(e.target.value)}
+          onChange={(e) => setSize(e.target.value)}
         />
         <AppInputField
           type="text"
@@ -88,7 +81,7 @@ export default function CreateProduct() {
           onChange={(e) => setCategory(e.target.value)}
         />
         <label htmlFor="stock">In Stock, yes or no</label>
-        <input type="checkbox" defaultChecked onChange={toggleCheckbox} />
+        <input type="checkbox" checked />
         <AppInputField
           type="number"
           placeholder="Quantity Available"
@@ -99,7 +92,7 @@ export default function CreateProduct() {
           placeholder="Amount: Please enter 0"
           onChange={(e) => setAmount(e.target.value)}
         />
-        <button type="submit">Create Product</button>
+        <AddToCartButton type="submit" title="Create Product"/> 
       </form>
     </div>
   );
