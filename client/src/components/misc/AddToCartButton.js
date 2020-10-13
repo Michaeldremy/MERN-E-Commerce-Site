@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function AddToCartButton({ title, onClick}) {
+export default function AddToCartButton({ title, onClick, type }) {
 
   return (
     <div>
-      <button style={addToCartStyle} onClick={onClick}>{title}</button>
+      <button style={addToCartStyle} onClick={onClick} type={type}>{title}</button>
     </div>
   )
 }

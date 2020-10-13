@@ -27,7 +27,8 @@ router.post("/create", async (req, res) => {
       !imgUrl ||
       !category ||
       !stock ||
-      !quantity
+      !quantity || 
+      !amount
     ) {
       return res
         .status(400)
